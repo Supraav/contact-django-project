@@ -14,8 +14,7 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+   
 
     <!-- Fonts & Icons -->
     <link
@@ -26,12 +25,16 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     />
+
+     <!-- Custom CSS -->
+     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+
     <title>{% block title %} {% endblock title %}</title>
   </head>
   <body>
     <!-- Navbar -->
 
-    <nav id="navbar">
+    <nav class="navs">
       <a class="logo" href="{% url 'index' %}">
         <i class="fas fa-user-circle"></i> Contacts
       </a>

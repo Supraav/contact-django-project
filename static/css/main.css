@@ -1,20 +1,20 @@
 :root {
-  --back: #1c8840;
+  --back: #e37d08;
   /* --logo: #ff70a6; */
   --girl: #e64298;
   --boy: #2874dd;
 }
+
 body {
-  font-family:Verdana;
+  font-family:'Helvetica';
 }
 
 /* Navbar Styles */
-
-#navbar {
+.navs{
   font-weight: light;
   display: flex;
   justify-content: space-around;
-  background-color:orangered;
+  background-color:orangered !important ;
   align-items: center;
   padding-top: 10px;
   padding-bottom: 12px;
@@ -52,13 +52,15 @@ button i {
 }
 
 input {
-  border-radius: 0px !important;
+  border-radius: 10px !important;
   width: 250px;
   border: none !important;
   background-color: #f2f3f5 !important;
   box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
 }
 /* Navbar Styles end */
+
+
 
 /* Card Styles */
 
