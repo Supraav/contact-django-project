@@ -51,3 +51,5 @@ def search(request):
     else:
         return redirect('index') # this means if localhost/search is passed in url then in will redirect to the home page
     return render(request,'search.html',context)
+
+    # this is a comment
