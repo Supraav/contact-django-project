@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} {{contact.name}} {% endblock title %}
+
+{% block content %} 
+<!-- Main Section -->
+<div class="container">
+  <h2 class="heading font-weight-light text-center">{{contact.name}}</h2>
+  <hr />
+</div>
+<div class="container main-part">
+  <!-- Card for details -->
+  {% include 'partials/_card.html' %}
+</div>
+<!-- Main Section ends-->
+
+{% endblock content %} 

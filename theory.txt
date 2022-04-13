@@ -1,0 +1,27 @@
+Jinja (Jinja2) is a template library.
+jinja is used for
+loading static {% %}
+accessing value {{status}} and a lot more..
+
+
+configurations like::
+{% ... %}
+{{ ... }}
+{# #}
+
+
+in if else statement:::
+{% if %}
+{% elif %}
+{% else %}
+
+{% endif %}
+
+
+in for loop:::
+{% for item in items %}
+
+{% endfor %}
+
+
+CSRF toke is used when POST method is used for secutity measures.
