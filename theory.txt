@@ -24,4 +24,13 @@ in for loop:::
 {% endfor %}
 
 
-CSRF toke is used when POST method is used for secutity measures.
+CSRF token is used when POST method is used for secutity measures.
+
+
+
+Django-crispy-forms is an application that helps to manage Django forms.
+we have installed from the django documentation as:
+https://django-crispy-forms.readthedocs.io/en/latest/install.html
+
+{% load crispy_forms_tags %} is used to load installed crispy forms tag in html
+e.g. {{form | crispy}}   i.e [ |(vertical_bar) crispy ] is used for crispy forms

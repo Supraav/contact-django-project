@@ -20,6 +20,9 @@ class contact (models.Model):
 
     def __str__(self):
         return f'{self.name} {self. gender}'
+
+    class Meta:
+        ordering = ['-id']  # this lets latest added contact to appear at the first in the index page
     
 # __STR__(SELF) is used to diplay the [object] i.e return self.[object]'s value instead of default naming order
 
@@ -31,3 +34,10 @@ class contact (models.Model):
 
 # WE STORE ALL THE CONTACTS UPLOADED BY USER IN MEDIA FOLDER
 # WE FIRST SET IN IN SETTINGS FILE
+
+
+
+#META
+# Model Meta is basically the inner class of your model class.
+# Model Meta is basically used to change the behavior of your model fields like changing order options,verbose_name and lot of other options. 
+# It’s completely optional to add Meta class in your model.

@@ -2,6 +2,8 @@ from django.shortcuts import render, HttpResponse,get_object_or_404
 from .models import contact
 from django.db.models import Q
 
+from django.views.generic.edit import CreateView,UpdateView,DeleteView
+
 #TO FETCH RESULT WITH MULTIPLE MODEL FIELDS, WE HAVE TO WORK WITH Q OBJECTS WHICH IS IMPORTED AS ABOVE
 
 #GET OBJECT OR 404 TRIES TO GET AN OBJECT FROM PARTICULAR MODEL ANF IF NOT FOUND THEN IT DISPLAYS 404 ERROR
@@ -50,6 +52,37 @@ def search(request):
         }
     else:
         return redirect('index') # this means if localhost/search is passed in url then in will redirect to the home page
-    return render(request,'search.html',context)
+    # return render(request,'search.html',context)
 
-    # this is a comment
+#A view that displays a form for creating an object, redisplaying the form with validation errors (if there are any) and saving the object.
+
+
+
+
+#createview,updateview and deleteview are the Form handling with class-based views 
+class ContactCreateView(CreateView):
+    model= contact
+    template_name='create.html'
+    fields=['name','email','phone','info','gender','image']
+    success_url='/'
+
+
+class ContactUpdateView(UpdateView):
+    model= contact
+    template_name='update.html'
+    fields=['name','email','phone','info','gender','image']
+    #success_url='/'          # IF WE KEEP THIS THEN AFTER UPDATING IT WILL RETURN TO THE HOME(INDEX) PAGE SO TO REMAIN IN THAT SAME DETAIL PAGE AFTER UPDATING, WE DO:
+    
+
+    #WE OVERRIDE THE SUCCESS URL WITH FORM_VALID, IT TAKES ARGUMENT SELF AND FORM
+    def form_valid(self,form):
+        instance=form.save()
+        return redirect('detail',instance.pk)
+
+
+
+class ContactDeleteView(DeleteView):
+    model= contact
+    template_name='delete.html'
+    success_url='/'
+    #FIELD IS NOT REQUIRED AS IT IS DELETED FROM THE DETAIL PAGE i.e AN INDIVIDUAL PAGE ITSELF

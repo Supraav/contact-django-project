@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+update {{contact}}
+{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    <h2 class="heading font-weight-light create-center "> Update {{contact}} </h2>  
+    <hr>
+</div>
+
+<div class="container w-25 card p-4 mt-4">
+     <form action="" method="post" enctype="multipart/form-data">        <!-- action is blank because it is managed by CreateView -->
+
+        {% csrf_token %} <!-- since it is post method so csrf token needed -->
+        
+        {{form | crispy }}  
+        <!-- CreateView. 
+        A view that displays a form for creating an object, redisplaying the form with validation errors (if there are any) and saving the object 
+        create view gives us the form context that helps to render the input tags automatically which are the 'field' property in 'views.py'-->
+        <input type="submit" value="Update" class="w-100 text-white text-center my-2 btn btn-info">
+    </form>
+
+</div>
+{% endblock content %}

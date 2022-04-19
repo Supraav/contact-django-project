@@ -31,16 +31,23 @@
 
     <title>{% block title %} {% endblock title %}</title>
   </head>
+
   <body>
     <!-- Navbar -->
-
     <nav class="navs">
       <a class="logo" href="{% url 'index' %}">
         <i class="fas fa-user-circle"></i> Contacts
       </a>
+
+      <p class="feature-link m-0 p-0"> 
+        <a href="{% url 'create' %}" class="mr-4 text-white">
+          <i class="fas fa-plus"></i> &nbsp; Add Contact
+        </a>
+      </p>
+
       <form class="form-inline my-2" action="{% url 'search' %}" method="GET">
-        <!-- {% csrf_token %} -->
-        <input class="form-control" type="text" placeholder="Find contacts..." name="search_term" />
+        <!-- {% csrf_token %}  used when POST method is used -->
+        <input class="form-control search-box" type="text" placeholder="Find contacts..." name="search_term" />
         <button class="btn" type="submit"><i class="fas fa-search"></i></button>
       </form>
     </nav>
@@ -51,7 +58,7 @@
 
     <!-- footer -->
     <footer class="mt-4 p-2">
-      <p class="text-center p-1 m-0">&copy; My Contacts 2019</p>
+      <p class="text-center p-1 m-0">&copy; My Contacts </p>
     </footer>
     <!-- footer ends -->
   </body>

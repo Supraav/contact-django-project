@@ -14,6 +14,20 @@
   <!-- Card for details -->
   {% include 'partials/_card.html' %}
 </div>
+
+<div class="container mt-3">
+  <!-- <h5 class="text-center my-3 font-weight-light">Date Added: &nbsp; {{ contact.date_added}}</h5>   #TO SHOW THE DATE ADDED  -->
+  <p class="text-center text-light">
+    <a class="btn btn-info px-5" href="{% url 'update' contact.id %}">
+      <i class="far fa-edit" > </i> &nbsp; Update
+    </a>
+    &nbsp;&nbsp;&nbsp;
+    <a class="btn btn-danger px-5" href="{% url 'delete' contact.id %}">
+      <i class="far fa-trash-alt" > </i> &nbsp; Delete
+    </a>
+
+  </p>
+</div>
 <!-- Main Section ends-->
 
 {% endblock content %} 

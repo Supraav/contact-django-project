@@ -1,6 +1,8 @@
-{% load static %} {% if contact.gender == 'male' %}
+{% load static %} 
+<!-- TO DISPLAY ONLY THE MALE ENTRIES -->
+{% if contact.gender == 'male' %}
 <!-- male Card for details -->
-<div class="card my-2 mx-2 boy-card {% if 'detail' in request.path %}mx-auto w-25 {% endif %}">
+<div class="card my-2 mx-2 boy-card {% if 'detail' in request.path %} mx-auto w-25 {% endif %}">
   <img
     src="{% if contact.image %}
   {{contact.image.url}}

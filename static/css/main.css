@@ -1,12 +1,12 @@
 :root {
-  --back: #e37d08;
+  --back: darkgreen;
   /* --logo: #ff70a6; */
   --girl: #e64298;
   --boy: #2874dd;
 }
 
 body {
-  font-family:'Helvetica';
+  font-family:cursive;
 }
 
 /* Navbar Styles */
@@ -14,7 +14,7 @@ body {
   font-weight: light;
   display: flex;
   justify-content: space-around;
-  background-color:orangered !important ;
+  background-color:darkgreen !important ;
   align-items: center;
   padding-top: 10px;
   padding-bottom: 12px;
@@ -26,7 +26,8 @@ body {
   letter-spacing: 1px;
   /* background: var(--logo); */
   color: white;
-  padding: 2px 12px;
+  padding: 2px ;
+  padding-right: 50px;
   border-radius: 8px;
   font-family: cursive;
 }
@@ -51,7 +52,7 @@ button i {
   color: var(--back);
 }
 
-input {
+.search-box {
   border-radius: 10px !important;
   width: 250px;
   border: none !important;
@@ -134,6 +135,11 @@ footer {
     font-size: 22px !important;
   }
   /* navbar style ends */
+
+  .feature-link{
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+  }
 
   /* card styles */
   .card-header {
