@@ -42,17 +42,18 @@ def search(request):
         search_results = contact.objects.filter(
             Q(name__icontains=search_term) |
             Q(email__icontains=search_term) |
-            Q(phone__iexact=search_term)    
+            Q(phone__iexact=search_term)   |
+            Q(info__icontains=search_term) 
         )
         
         
         context={
             'search_term':search_term,
-            'contacts':search_results
+            'contacts':search_results,
         }
     else:
         return redirect('index') # this means if localhost/search is passed in url then in will redirect to the home page
-    # return render(request,'search.html',context)
+    return render(request,'search.html',context)
 
 #A view that displays a form for creating an object, redisplaying the form with validation errors (if there are any) and saving the object.
 
@@ -86,3 +87,4 @@ class ContactDeleteView(DeleteView):
     template_name='delete.html'
     success_url='/'
     #FIELD IS NOT REQUIRED AS IT IS DELETED FROM THE DETAIL PAGE i.e AN INDIVIDUAL PAGE ITSELF
+
